@@ -19,29 +19,18 @@ export const TodoList = (props) => {
     const { todoList, handleChange, handleRemove } = props;
     return (
         <React.Fragment>
-                {/* { todoList.map(todo => {
+            {
+                todoList.map(todo => {
                     return (
-                      
-                        <div key={ todo.id }>
-                            <p>id: { todo.id } / { todo.content } / 
-                                <button type="button" onClick={() => handleChange(todo)}>{ todo.complete ? '완료' : '실패' }</button>
-                                <button type="button" onClick={() => handleRemove(todo.id)}>remove</button>
-                            </p>
-                        </div>
-                    )})
-                } */}
-                {
-                    todoList.map(todo => {
-                        return (
-                            <Todo 
-                                todo={ todo }
-                                key={ todo.id }
-                                handleChange={ handleChange }
-                                handleRemove={ handleRemove }
-                            />
-                        )
-                    })
-                }
+                        <Todo 
+                            todo={ todo }
+                            key={ todo.id }
+                            handleChange={ handleChange }
+                            handleRemove={ handleRemove }
+                        />
+                    )
+                })
+            }
         </React.Fragment>
     )
 }
@@ -50,31 +39,20 @@ export const TodoList = (props) => {
 //     render() {
 //         const { todoList, handleChange, handleRemove } = this.props;
 //         return (
-//             <div className="todo-list">
+//             <>
 //                 { todoList.map(todo => {
 //                     return (
-                      
-//                         <div key={ todo.id }>
-//                             <p>id: { todo.id } / { todo.content } / 
+//                         <div className="todo" key={ todo.id }>
+//                             <span>{ todo.id }.</span>
+//                             <span>Todo: { todo.content }</span>
+//                             <div className="button-box">
 //                                 <button type="button" onClick={() => handleChange(todo)}>{ todo.complete ? '완료' : '실패' }</button>
 //                                 <button type="button" onClick={() => handleRemove(todo.id)}>remove</button>
-//                             </p>
+//                             </div>
 //                         </div>
 //                     )})
 //                 }
-//                 {
-//                     todoList.map(todo => {
-//                         return (
-//                             <Todo 
-//                                 todo={ todo }
-//                                 key={ todo.id }
-//                                 handleChange={ handleChange }
-//                                 handleRemove={ handleRemove }
-//                             />
-//                         )
-//                     })
-//                 }
-//           </div>
+//             </>
 //         )
 //     }
 // }

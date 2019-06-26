@@ -12,10 +12,6 @@ export default class App extends React.Component {
   }
 
   handleSubmit = (content = '') => {
-    this.createTodo(content);
-  }
-
-  createTodo = (content = '') => {
     const item = { id: this.createId(), content, complete: false };
     this.setState({
       todoList: this.state.todoList.concat(item),
