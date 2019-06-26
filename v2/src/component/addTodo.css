@@ -1,0 +1,22 @@
+form {
+    display: flex;
+    height: 40px;
+    margin-bottom: 30px;
+}
+
+input {
+    width: 100%;
+    padding: 5px 10px;
+    border-radius: 5px 0 0 5px;
+    border: 1px solid lightgrey;
+    font-size: 16px;
+}
+
+.add {
+    border-radius: 0 5px 5px 0;
+    border: 1px solid lightgray;
+    background-color: lightgray;
+    color: white;
+    width: 70px;
+    font-size: 16px;
+}

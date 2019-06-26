@@ -1,0 +1,31 @@
+.todo {
+    background-color: white;
+    border-radius: 10px;
+    margin: 10px 0;
+    padding: 15px;
+    flex-direction: row;
+    align-items: center;
+    display: grid;
+    grid-template-columns: 10% 65% 25%;
+}
+
+.change {
+    height: 40px;
+    background-color: pink;
+    color: white;
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 10px;
+    width: 70px;
+}
+
+.remove {
+    height: 40px;
+    margin-left: 10px;
+    background-color: sandybrown;
+    color: white;
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 10px;
+    width: 80px;
+}
