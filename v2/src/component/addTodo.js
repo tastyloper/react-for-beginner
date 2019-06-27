@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
-import './addTodo.css';
 
 export default class AddTodo extends Component {
 
-    state = {
-        content: ''
+    constructor(props) {
+        super(props);
+        this.state = {
+            content: ''
+        }
     }
 
     handleContent = (content) => {
@@ -21,7 +23,9 @@ export default class AddTodo extends Component {
         return (
             <form  onSubmit={(e) => this.handleSubmit(e)}>
                 <input type="text" placeholder="add Todo" onChange={(e) => this.handleContent(e.target.value)}/>
-                <button className="add" type="submit">add</button>
+                <button className="add" type="submit">
+                    add
+                </button>
             </form>
         );
     }

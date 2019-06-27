@@ -3,12 +3,17 @@ import AddTodo from './component/addTodo';
 import { TodoList } from './component/todoList';
 import './App.css';
 export default class App extends React.Component {
-  state = {
-    todoList: [
-      { id: 1, content: 'HTML', complete: false },
-      { id: 2, content: 'CSS', complete: false },
-      { id: 3, content: 'JS', complete: true },
-    ]
+  
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      todoList: [
+        { id: 1, content: 'HTML', complete: false },
+        { id: 2, content: 'CSS', complete: false },
+        { id: 3, content: 'JS', complete: true },
+      ]
+    }
   }
 
   handleSubmit = (content = '') => {
@@ -45,10 +50,12 @@ export default class App extends React.Component {
         <h2>Todo List</h2>
         <div className="container">
           <AddTodo onSubmit={ this.handleSubmit }/>
-          <TodoList 
-            handleChange={ this.handleChange }
-            handleRemove={ this.handleRemove }
-            todoList={ todoList }/>
+          <ul>
+            <TodoList 
+              handleChange={ this.handleChange }
+              handleRemove={ this.handleRemove }
+              todoList={ todoList }/>
+          </ul>
         </div>
       </main>
     )
