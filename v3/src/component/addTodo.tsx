@@ -20,6 +20,7 @@ export default class AddTodo extends Component<IAddTodo> {
     
     handleSubmit = (e: any): void => {
         e.preventDefault();
+        e.stopPropagation();
         this.props.onSubmit(this.state.content);
         e.target.reset();
     }
@@ -28,7 +29,9 @@ export default class AddTodo extends Component<IAddTodo> {
         return (
             <form onSubmit={(e) => this.handleSubmit(e)}>
                 <input type="text" placeholder="add Todo" onChange={(e) => this.handleContent(e.target.value)}/>
-                <button className="add" type="submit">add</button>
+                <button className="add" type="submit">
+                    add
+                </button>
             </form>
         );
     }

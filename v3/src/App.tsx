@@ -26,10 +26,9 @@ export default class App extends React.Component<Props> {
   }
 
   handleSubmit = (content: string): void => {
-    const item = { id: this.createId(), content, complete: false };
-    this.setState({ 
-      todoList: this.state.todoList.concat(item),
-    });
+    // const item = { id: this.createId(), content, complete: false };
+    const todoList = this.state.todoList.concat({ id: this.createId(), content, complete: false });
+    this.setState({ todoList });
   }
 
   createId = (): number => {
