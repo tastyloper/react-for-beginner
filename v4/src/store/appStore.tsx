@@ -24,7 +24,9 @@ export default class AppStore {
 
     @action
     handleSubmit = (): void => {
+        if (this.content.length < 1) { return; };
         this.todoList = this.todoList.concat({ id: this.createId(), content: this.content, complete: false });
+        this.content = '';
     }
 
     createId = (): number => {

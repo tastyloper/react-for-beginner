@@ -14,8 +14,14 @@ export default class App extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
+    e.stopPropagation();
+    const { content } = this.state;
+    if (content.length < 1) {
+      return;
+    }
     this.createTodo(this.state.content);
     e.target.reset();
+    this.setState({ content: '' });
   }
 
   createTodo = (content) => {
