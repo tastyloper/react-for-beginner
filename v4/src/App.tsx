@@ -1,7 +1,5 @@
 import React from 'react';
-import './App.css';
-import { TodoItem } from './component/todoItem';
-import AddTodo from './component/addTodo';
+import { TodoItem, AddTodo } from './component';
 import { inject, observer } from 'mobx-react';
 
 export interface Todo {
@@ -13,6 +11,13 @@ export interface Todo {
 @inject('appStore')
 @observer
 export default class App extends React.Component<any> {
+
+  handleSubmit = (e: any): void => {
+    e.preventDefault();
+    e.stopPropagation();
+    this.props.appStore.handleSubmit();
+    e.target.reset();
+  }
 
   render(): JSX.Element {
     const { appStore } = this.props;
@@ -31,7 +36,7 @@ export default class App extends React.Component<any> {
       <main>
         <h2>Todo List</h2>
         <div className="container">
-          <AddTodo onSubmit={appStore.handleSubmit} onChange={appStore.handleContent}/>
+          <AddTodo onSubmit={this.handleSubmit} onChange={appStore.handleContent}/>
           {todoList}
         </div>
       </main>

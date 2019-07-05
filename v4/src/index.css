@@ -17,6 +17,24 @@ ul {
   padding: 0;
 }
 
+/* app.jsx */
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  margin-top: 200px;
+}
+
+.container {
+  background-color: skyblue;
+  border-radius: 40px;
+  padding: 40px;
+  width: 700px;
+}
+
 /* addTodo */
 
 form {
