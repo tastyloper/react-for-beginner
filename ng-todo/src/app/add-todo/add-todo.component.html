@@ -1,0 +1,6 @@
+<form [formGroup]="dataset" (ngSubmit)="addTodo()" novalidate>
+  <input formControlName="content" type="text" placeholder="add Todo">
+  <button class="add" type="submit" [disabled]="dataset.invalid">
+    add
+  </button>
+</form>

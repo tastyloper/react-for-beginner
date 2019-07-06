@@ -1,0 +1,14 @@
+<ul>
+  <li *ngFor="let todo of appService.todoList">
+    <span>{{ todo.id }}.</span>
+    <span>Todo : {{ todo.content }}</span>
+    <div class="button-box">
+      <button class="change" type="button" (click)="appService.handleChange(todo)">
+        {{ todo.complete ? '완료' : '미완료' }}
+      </button>
+      <button class="remove" type="button" (click)="appService.handleRemove(todo.id)">
+        제거
+      </button>
+    </div>
+  </li>
+</ul>
