@@ -37,7 +37,9 @@ export default class App extends React.Component<any> {
         <h2>Todo List</h2>
         <div className="container">
           <AddTodo onSubmit={this.handleSubmit} onChange={appStore.handleContent}/>
-          {todoList}
+          <ul>
+            {todoList}
+          </ul>
         </div>
       </main>
     )
