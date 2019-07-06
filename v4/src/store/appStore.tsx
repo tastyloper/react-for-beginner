@@ -18,7 +18,7 @@ export default class AppStore {
     }
 
     @action
-    handleRemove = (id: number) => {
+    handleRemove = (id: number): void => {
         this.todoList = this.todoList.filter(todo => todo.id !== id);
     }
 
