@@ -53,25 +53,24 @@ export default class App extends React.Component<Props> {
 
   render(): JSX.Element {
     const { todoList } = this.state;
-    
+    const list = todoList.map(todo => {
+      return (
+        <TodoItem
+          todo={ todo }
+          key={ todo.id }
+          handleChange={ this.handleChange }
+          handleRemove={ this.handleRemove }
+        />
+      )
+    })
+
     return (
       <main>
         <h2>Todo List</h2>
         <div className="container">
           <AddTodo onSubmit={ this.handleSubmit }/>
           <ul>
-            { 
-              todoList.map(todo => {
-                return (
-                  <TodoItem
-                    todo={ todo }
-                    key={ todo.id }
-                    handleChange={ this.handleChange }
-                    handleRemove={ this.handleRemove }
-                  />
-                )
-              })
-            }
+            { list }
           </ul>
         </div>
       </main>
