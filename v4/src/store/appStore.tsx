@@ -13,7 +13,7 @@ export default class AppStore {
     content: string = '';
 
     @action
-    handleContent = (content: string) => {
+    handleContent = (content: string): void => {
         this.content = content;
     }
 
