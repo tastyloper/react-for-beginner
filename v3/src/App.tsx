@@ -53,7 +53,7 @@ export default class App extends React.Component<Props> {
 
   render(): JSX.Element {
     const { todoList } = this.state;
-    const list = todoList.map(todo => {
+    const list: JSX.Element[] = todoList.map(todo => {
       return (
         <TodoItem
           todo={ todo }

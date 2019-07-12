@@ -9,6 +9,6 @@ import AppService from '../app.service';
 export class TodoListComponent {
 
   constructor(
-    public appService: AppService,
+    protected appService: AppService,
   ) { }
 }

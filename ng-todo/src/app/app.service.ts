@@ -33,6 +33,6 @@ export default class AppService {
                 item.complete = !item.complete
             };
             return item;
-        })
+        });
     }
 }
