@@ -47,7 +47,7 @@ export default class App extends React.Component {
     const { todoList } = this.state;
     return (
       <main>
-        <h2>Todo List</h2>
+        <h2>Todo List v2</h2>
         <div className="container">
           <AddTodo onSubmit={ this.handleSubmit }/>
           <ul>

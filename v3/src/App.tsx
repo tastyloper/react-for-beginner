@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
-import { TodoItem } from './component/todoItem';
-import AddTodo from './component/addTodo';
+import { TodoItem } from './component/TodoItem';
+import AddTodo from './component/AddTodo';
 
 interface Props {}
 
@@ -26,7 +26,6 @@ export default class App extends React.Component<Props> {
   }
 
   handleSubmit = (content: string): void => {
-    // const item = { id: this.createId(), content, complete: false };
     const todoList = this.state.todoList.concat({ id: this.createId(), content, complete: false });
     this.setState({ todoList });
   }
@@ -66,7 +65,7 @@ export default class App extends React.Component<Props> {
 
     return (
       <main>
-        <h2>Todo List</h2>
+        <h2>Todo List v3</h2>
         <div className="container">
           <AddTodo onSubmit={ this.handleSubmit }/>
           <ul>

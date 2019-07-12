@@ -1,5 +1,6 @@
 import React from 'react'
 import { Todo } from '../App';
+import { Button } from '.';
 
 interface ITodoItem {
     todo: Todo;
@@ -14,12 +15,16 @@ export const TodoItem = (props: ITodoItem): JSX.Element => {
             <span>{ todo.id }.</span>
             <span>Todo : { todo.content }</span>
             <div className="button-box">
-                <button className="change" type="button" onClick={() => handleChange(todo)}>
-                    { todo.complete ? '완료' : '미완료' }
-                </button>
-                <button className="remove" type="button" onClick={() => handleRemove(todo.id)}>
-                    제거
-                </button>
+                <Button 
+                    className="change" 
+                    type="button" 
+                    onClick={() => handleChange(todo)} 
+                    name={ todo.complete ? '완료' : '미완료' }/>
+                <Button 
+                    className="remove" 
+                    type="button" 
+                    name="제거" 
+                    onClick={() => handleRemove(todo.id)}/>
             </div>
         </li>
     )

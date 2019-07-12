@@ -59,6 +59,7 @@ export default class App extends React.Component {
     const { todoList } = this.state;
     return (
       <main>
+        <h2>Todo List v1</h2>
         <form className="add-todo" onSubmit={ this.handleSubmit }>
           <input type="text" placeholder="add Todo" onChange={(e) => this.handleContent(e.target.value)}/>
           <button type="submit">add</button>

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Button } from './Button';
 
 interface IAddTodo {
     onSubmit: (content: string) => void;
@@ -34,9 +35,7 @@ export default class AddTodo extends Component<IAddTodo> {
         return (
             <form onSubmit={(e) => this.handleSubmit(e)}>
                 <input type="text" placeholder="add Todo" onChange={(e) => this.handleContent(e.target.value)}/>
-                <button className="add" type="submit">
-                    add
-                </button>
+                <Button type="submit" className="add" name="add" />
             </form>
         );
     }
